@@ -1,0 +1,54 @@
+.header__top {
+    display: flex;
+    gap: 32px;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__company {
+    color: var(--color-white);
+    font-size: 24px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.header__info {
+    display: flex;
+    align-items: center;
+
+    gap: 64px;
+}
+
+.header__items {
+    display: flex;
+
+    gap: 32px;
+}
+
+.header__item {
+    color: var(--color-white);
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.header__user {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+    cursor: pointer;
+}
+
+.header__user__img {
+    width: 32px;
+    aspect-ratio: 1;
+    border-radius: 100%;
+
+    object-fit: cover;
+}
+
+.header__user__name {
+    color: var(--color-white);
+    font-weight: 500;
+}

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>uni airways</title>
+
+    <link rel="stylesheet" href="./styles/global.css" />
+    <link rel="stylesheet" href="./styles/container.css" />
+
+    <link rel="stylesheet" href="./styles/component/header.css" />
+    <link rel="stylesheet" href="./styles/component/footer.css" />
+    <link rel="stylesheet" href="./styles/component/search.css" />
+
+    <link rel="stylesheet" href="./styles/pages/home.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <section class="search">
+
+        <video autoplay muted loop playsinline id="search__video">
+            <source src="./assets/video.mp4" type="video/mp4" />
+        </video>
+
+        <div class="container search__content">
+
+            <header class="header__top">
+                <a href="./index.html" class="header__company">
+                    uni airways
+                </a>
+
+                <div class="header__info">
+                    <div class="header__items">
+                        <a href="./index.html" class="header__item">
+                            Поиск рейсов
+                        </a>
+                        <a href="./gallery.html" class="header__item">
+                            Галерея
+                        </a>
+                    </div>
+
+                    <a href="./profile.html" class="header__user">
+                        <img class="header__user__img"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Pavel_Durov_sitting_portrait.jpg/250px-Pavel_Durov_sitting_portrait.jpg"
+                            alt="User logo">
+                        <div class="header__user__name">
+                            Ерасыл У.
+                        </div>
+                    </a>
+                </div>
+
+            </header>
+
+            <form class="search__form">
+                <div class="search__title">
+                    Бронирование авиабилетов
+                </div>
+
+                <div class="search__forms">
+                    <div class="search__loc">
+                        <div class="search__input search__input__start">
+                            <label class="search__input__label">Откуда:</label>
+                            <input type="text" class="search__input__field" placeholder="Страна, город или аэропорт">
+                        </div>
+                        <div class="search__input search__input__end">
+                            <label class="search__input__label">Куда</label>
+                            <input type="text" class="search__input__field" placeholder="Страна, город или аэропорт">
+                        </div>
+                    </div>
+
+                    <div class="search__date">
+                        <div class="search__input search__input__start">
+                            <label class="search__input__label">Туда</label>
+                            <input type="date" class="search__input__field" placeholder="Добавить дату">
+                        </div>
+                        <div class="search__input search__input__end">
+                            <label class="search__input__label">Обратно</label>
+                            <input type="date" class="search__input__field" placeholder="Добавить дату">
+                        </div>
+                    </div>
+
+                    <div class="search__count">
+                        <div class="search__input">
+                            <label class="search__input__label">Пассажиры и класс</label>
+                            <input type="text" class="search__input__field" placeholder="Количество пассажиров">
+                        </div>
+                    </div>
+
+                    <button class="search__button">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px"
+                            fill="#e3e3e3">
+                            <path
+                                d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="search__info">
+                    <div class="search__direction">
+                        <div class="search__direction__text">
+                            В одну сторону
+                        </div>
+
+                        <div class="search__direction__text">
+                            Туда и обратно
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </section>
+
+    <section class="container content results">
+        <aside class="results__filter">
+            <div class="filter__block">
+                <div class="filter__title">Авиакомпания</div>
+                <label><input type="checkbox"> Air Astana</label>
+                <label><input type="checkbox"> Lufthansa</label>
+                <label><input type="checkbox"> Turkish Airlines</label>
+            </div>
+
+            <div class="filter__block">
+                <div class="filter__title">Пересадки</div>
+                <label><input type="checkbox"> Без пересадок</label>
+                <label><input type="checkbox"> 1 пересадка</label>
+                <label><input type="checkbox"> 2+ пересадок</label>
+            </div>
+
+            <div class="filter__block">
+                <div class="filter__title">Цена</div>
+
+                <div class="filter__range-inputs">
+                    <input type="text" class="filter__price" placeholder="От">
+                    <input type="text" class="filter__price" placeholder="До">
+                </div>
+
+                <input type="range" min="20000" max="300000" step="1000">
+            </div>
+
+        </aside>
+
+        <div class="results__list">
+            <div class="ticket">
+                <div class="ticket__content">
+                    <div class="ticket__route">
+                        <div class="ticket__city">Алматы (ALA)</div>
+                        <div class="ticket__time">08:30</div>
+                    </div>
+                    <div class="ticket__middle">✈</div>
+                    <div class="ticket__route">
+                        <div class="ticket__city">Стамбул (IST)</div>
+                        <div class="ticket__time">12:45</div>
+                    </div>
+                    <div class="ticket__price">75 000 ₸</div>
+                </div>
+                <a class="ticket__button" href="./billing.html">КУПИТЬ</a>
+            </div>
+
+            <div class="ticket">
+                <div class="ticket__content">
+                    <div class="ticket__route">
+                        <div class="ticket__city">Нур-Султан (NQZ)</div>
+                        <div class="ticket__time">10:15</div>
+                    </div>
+                    <div class="ticket__middle">✈</div>
+                    <div class="ticket__route">
+                        <div class="ticket__city">Москва (SVO)</div>
+                        <div class="ticket__time">11:50</div>
+                    </div>
+                    <div class="ticket__price">55 000 ₸</div>
+                </div>
+                <a class="ticket__button" href="./billing.html">КУПИТЬ</a>
+            </div>
+
+            <div class="ticket">
+                <div class="ticket__content">
+                    <div class="ticket__route">
+                        <div class="ticket__city">Нур-Султан (NQZ)</div>
+                        <div class="ticket__time">09:15</div>
+                    </div>
+                    <div class="ticket__middle">✈</div>
+                    <div class="ticket__route">
+                        <div class="ticket__city">Доха (DOH)</div>
+                        <div class="ticket__time">12:50</div>
+                    </div>
+                    <div class="ticket__price">79 000 ₸</div>
+                </div>
+                <a class="ticket__button" href="./billing.html">КУПИТЬ</a>
+            </div>
+
+            <div class="ticket">
+                <div class="ticket__content">
+                    <div class="ticket__route">
+                        <div class="ticket__city">Доха (DOH)</div>
+                        <div class="ticket__time">08:30</div>
+                    </div>
+                    <div class="ticket__middle">✈</div>
+                    <div class="ticket__route">
+                        <div class="ticket__city">Нью-Йорк (JFK)</div>
+                        <div class="ticket__time">12:45</div>
+                    </div>
+                    <div class="ticket__price">575 000 ₸</div>
+                </div>
+                <a class="ticket__button" href="./billing.html">КУПИТЬ</a>
+            </div>
+
+            <div class="ticket">
+                <div class="ticket__content">
+                    <div class="ticket__route">
+                        <div class="ticket__city">Алматы (ALA)</div>
+                        <div class="ticket__time">07:00</div>
+                    </div>
+                    <div class="ticket__middle">✈</div>
+                    <div class="ticket__route">
+                        <div class="ticket__city">Бангкок (BKK)</div>
+                        <div class="ticket__time">14:30</div>
+                    </div>
+                    <div class="ticket__price">150 000 ₸</div>
+                </div>
+                <a class="ticket__button" href="./billing.html">КУПИТЬ</a>
+            </div>
+
+            <div class="ticket">
+                <div class="ticket__content">
+                    <div class="ticket__route">
+                        <div class="ticket__city">Нур-Султан (NQZ)</div>
+                        <div class="ticket__time">06:50</div>
+                    </div>
+                    <div class="ticket__middle">✈</div>
+                    <div class="ticket__route">
+                        <div class="ticket__city">Берлин (TXL)</div>
+                        <div class="ticket__time">12:20</div>
+                    </div>
+                    <div class="ticket__price">120 000 ₸</div>
+                </div>
+                <a class="ticket__button" href="./billing.html">КУПИТЬ</a>
+            </div>
+
+            <div class="ticket">
+                <div class="ticket__content">
+                    <div class="ticket__route">
+                        <div class="ticket__city">Алматы (ALA)</div>
+                        <div class="ticket__time">09:10</div>
+                    </div>
+                    <div class="ticket__middle">✈</div>
+                    <div class="ticket__route">
+                        <div class="ticket__city">Токио (HND)</div>
+                        <div class="ticket__time">23:45</div>
+                    </div>
+                    <div class="ticket__price">420 000 ₸</div>
+                </div>
+                <a class="ticket__button" href="./billing.html">КУПИТЬ</a>
+            </div>
+
+            <div class="ticket">
+                <div class="ticket__content">
+                    <div class="ticket__route">
+                        <div class="ticket__city">Нур-Султан (NQZ)</div>
+                        <div class="ticket__time">13:15</div>
+                    </div>
+                    <div class="ticket__middle">✈</div>
+                    <div class="ticket__route">
+                        <div class="ticket__city">Стамбул (IST)</div>
+                        <div class="ticket__time">17:40</div>
+                    </div>
+                    <div class="ticket__price">65 000 ₸</div>
+                </div>
+                <a class="ticket__button" href="./billing.html">КУПИТЬ</a>
+            </div>
+
+            <div class="ticket">
+                <div class="ticket__content">
+                    <div class="ticket__route">
+                        <div class="ticket__city">Алматы (ALA)</div>
+                        <div class="ticket__time">12:00</div>
+                    </div>
+                    <div class="ticket__middle">✈</div>
+                    <div class="ticket__route">
+                        <div class="ticket__city">Дубай (DXB)</div>
+                        <div class="ticket__time">16:30</div>
+                    </div>
+                    <div class="ticket__price">130 000 ₸</div>
+                </div>
+                <a class="ticket__button" href="./billing.html">КУПИТЬ</a>
+            </div>
+
+            <div class="ticket">
+                <div class="ticket__content">
+                    <div class="ticket__route">
+                        <div class="ticket__city">Нур-Султан (NQZ)</div>
+                        <div class="ticket__time">15:00</div>
+                    </div>
+                    <div class="ticket__middle">✈</div>
+                    <div class="ticket__route">
+                        <div class="ticket__city">Париж (CDG)</div>
+                        <div class="ticket__time">21:30</div>
+                    </div>
+                    <div class="ticket__price">210 000 ₸</div>
+                </div>
+                <a class="ticket__button" href="./billing.html">КУПИТЬ</a>
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="footer">
+        <div class="container footer__content">
+            <a href="./index.html" class="footer__brand">
+                uni airways
+            </a>
+
+            <div class="footer__links">
+                <a href="./index.html">Поиск рейсов</a>
+                <a href="./gallery.html">Галерея</a>
+            </div>
+
+            <div class="footer__author">
+                Yerassyl Unerbek, Dana Shokobalinova
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

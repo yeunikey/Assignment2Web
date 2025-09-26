@@ -1,0 +1,37 @@
+:root {
+    --color-primary: #1768ff;
+    --color-muted: #f7f7f7;
+    --color-white: #ffffff;
+    --color-dark: #242424;
+    --color-secondary: #9caab5;
+    --color-background: #05203d;
+    --color-dark-light: #E2E2E2;
+    --color-gray: #C3C3C3;
+    --color-red: #D45353;
+    --color-stroke: #CFCFCF;
+    --color-green: #29b52b;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    margin: 0 0;
+    min-height: 100dvh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;
+}
+
+* {
+    transition: all ease-in-out 0.3s;
+}
+
+a {
+    text-decoration: none;
+}

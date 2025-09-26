@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>uni airways</title>
+
+    <link rel="stylesheet" href="./styles/global.css" />
+    <link rel="stylesheet" href="./styles/container.css" />
+
+    <link rel="stylesheet" href="./styles/component/header_profile.css" />
+    <link rel="stylesheet" href="./styles/component/footer.css" />
+
+    <link rel="stylesheet" href="./styles/pages/home.css" />
+    <link rel="stylesheet" href="./styles/pages/profile.css" />
+    <link rel="stylesheet" href="./styles/pages/success.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="container header__top">
+        <a href="./index.html" class="header__company">
+            uni airways
+        </a>
+
+        <div class="header__info">
+            <div class="header__items">
+                <a href="./index.html" class="header__item">
+                    Поиск рейсов
+                </a>
+                <a href="./gallery.html" class="header__item">
+                    Галерея
+                </a>
+            </div>
+
+            <a href="./profile.html" class="header__user">
+                <img class="header__user__img"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Pavel_Durov_sitting_portrait.jpg/250px-Pavel_Durov_sitting_portrait.jpg"
+                    alt="User logo">
+                <div class="header__user__name">
+                    Ерасыл У.
+                </div>
+            </a>
+        </div>
+
+    </header>
+
+    <section class="container content success">
+        <div class="success__card">
+            <div class="success__icon">✔</div>
+            <h1 class="success__title">Оплата прошла успешно</h1>
+            <p class="success__subtitle">Ваш билет забронирован и отправлен на email</p>
+
+            <div class="ticket">
+                <div class="ticket__content">
+                    <div class="ticket__route">
+                        <div class="ticket__city">Алматы (ALA)</div>
+                        <div class="ticket__time">08:30</div>
+                    </div>
+                    <div class="ticket__middle">✈</div>
+                    <div class="ticket__route">
+                        <div class="ticket__city">Стамбул (IST)</div>
+                        <div class="ticket__time">12:45</div>
+                    </div>
+                    <div class="ticket__price">75 000 ₸</div>
+                </div>
+            </div>
+
+            <a href="/" class="success__button">На главную</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer__content">
+            <a href="./index.html" class="footer__brand">
+                uni airways
+            </a>
+
+            <div class="footer__links">
+                <a href="./index.html">Поиск рейсов</a>
+                <a href="./gallery.html">Галерея</a>
+            </div>
+
+            <div class="footer__author">
+                Yerassyl Unerbek, Dana Shokobalinova
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

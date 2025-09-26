@@ -1,0 +1,115 @@
+/* flexbox */
+
+.billing {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+}
+
+.billing__content {
+    flex: 1;
+}
+
+/* info */
+
+.billing__info {
+    flex: 0 0 300px;
+    height: fit-content;
+    background-color: var(--color-muted);
+    border-radius: 13px;
+    padding: 16px;
+}
+
+.billing__info__title {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+ul {
+    list-style-type: "+";
+}
+
+.billing__info__item {
+    color: #999;
+    font-size: 14px;
+}
+
+.billing__info__price {
+    font-size: 16px;
+    font-weight: 500;
+
+    margin-top: 32px;
+}
+
+.billing__info__kaspi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+    padding: 12px 16px;
+    width: 100%;
+
+    background-color: var(--color-dark);
+    border: none;
+    border-radius: 16px;
+
+    margin-top: 12px;
+    cursor: pointer;
+
+    box-sizing: border-box;
+}
+
+.billing__info__kaspi span {
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+}
+
+/* Content */
+
+.billing__form__title {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    margin-top: 48px;
+}
+
+.billing__form {
+    margin-top: 8px;
+
+    flex: 1;
+    background-color: var(--color-muted);
+    border-radius: 13px;
+    padding: 16px;
+}
+
+
+.billing__form__group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.billing__form__group label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-dark);
+}
+
+.billing__form__group input,
+.billing__form__group select {
+    padding: 10px 12px;
+    font-size: 14px;
+    border: 1px solid var(--color-stroke);
+    border-radius: 8px;
+    outline: none;
+
+    background-color: var(--color-muted);
+}
+
+.billing__form__group input:focus,
+.billing__form__group select:focus {
+    border-color: var(--color-dark);
+}

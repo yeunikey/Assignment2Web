@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>uni airways</title>
+
+    <link rel="stylesheet" href="./styles/global.css" />
+    <link rel="stylesheet" href="./styles/container.css" />
+
+    <link rel="stylesheet" href="./styles/component/header_profile.css" />
+    <link rel="stylesheet" href="./styles/component/footer.css" />
+
+    <link rel="stylesheet" href="./styles/pages/home.css" />
+    <link rel="stylesheet" href="./styles/pages/profile.css" />
+    <link rel="stylesheet" href="./styles/pages/billing.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="container header__top">
+        <a href="./index.html" class="header__company">
+            uni airways
+        </a>
+
+        <div class="header__info">
+            <div class="header__items">
+                <a href="./index.html" class="header__item">
+                    Поиск рейсов
+                </a>
+                <a href="./gallery.html" class="header__item">
+                    Галерея
+                </a>
+            </div>
+
+            <a href="./profile.html" class="header__user">
+                <img class="header__user__img"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Pavel_Durov_sitting_portrait.jpg/250px-Pavel_Durov_sitting_portrait.jpg"
+                    alt="User logo">
+                <div class="header__user__name">
+                    Ерасыл У.
+                </div>
+            </a>
+        </div>
+
+    </header>
+
+    <section class="container content billing">
+
+        <div class="billing__content">
+            <div class="ticket">
+                <div class="ticket__content">
+                    <div class="ticket__route">
+                        <div class="ticket__city">Алматы (ALA)</div>
+                        <div class="ticket__time">08:30</div>
+                    </div>
+                    <div class="ticket__middle">✈</div>
+                    <div class="ticket__route">
+                        <div class="ticket__city">Стамбул (IST)</div>
+                        <div class="ticket__time">12:45</div>
+                    </div>
+                    <div class="ticket__price">75 000 ₸</div>
+                </div>
+            </div>
+
+            <div class="billing__form__title">Информация о пассажире</div>
+
+            <div class="billing__form">
+
+                <div class="billing__form__group">
+                    <label for="iin">ИИН</label>
+                    <input type="text" id="iin" name="iin" placeholder="ИИН пассажира">
+                </div>
+
+                <div class="billing__form__group">
+                    <label for="fio">ФИО</label>
+                    <input type="text" id="fio" name="fio" placeholder="Фамилия Имя Отчество">
+                </div>
+
+                <div class="billing__form__group">
+                    <label for="age">Возраст</label>
+                    <input type="number" id="age" name="age" placeholder="Возраст">
+                </div>
+
+                <div class="billing__form__group">
+                    <label for="baggage">Багаж</label>
+                    <select id="baggage" name="baggage">
+                        <option value="none">Без багажа</option>
+                        <option value="10kg">Багаж до 10 кг</option>
+                        <option value="20kg">Багаж до 20 кг</option>
+                        <option value="30kg">Багаж до 30 кг</option>
+                    </select>
+                </div>
+
+                <div class="billing__form__group">
+                    <label for="email">Электронная почта</label>
+                    <input type="email" id="email" name="email" placeholder="example@mail.com">
+                </div>
+
+                <div class="billing__form__group">
+                    <label for="phone">Номер телефона</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__">
+                </div>
+            </div>
+        </div>
+
+        <div class="billing__info">
+            <div class="billing__info__title">
+                Формирование чека
+            </div>
+
+            <ul>
+                <li class="billing__info__item">75 000 ₸, x1 билет ALA - IST.</li>
+                <li class="billing__info__item">78 750 ₸, За сервис 5%</li>
+                <li class="billing__info__item">88 200 ₸, НДС 12%</li>
+            </ul>
+
+            <div class="billing__info__price">
+                Итого: 88 200 ₸
+            </div>
+
+            <a class="billing__info__kaspi" href="./success.html">
+                <img height="24px" width="24px" src="https://companieslogo.com/img/orig/KKS.F-9d710a31.png?t=1720244492"
+                    alt="kaspi">
+
+                <span>
+                    Оплатить
+                </span>
+            </a>
+        </div>
+
+    </section>
+
+    <footer class="footer">
+        <div class="container footer__content">
+            <a href="./index.html" class="footer__brand">
+                uni airways
+            </a>
+
+            <div class="footer__links">
+                <a href="./index.html">Поиск рейсов</a>
+                <a href="./gallery.html">Галерея</a>
+            </div>
+
+            <div class="footer__author">
+                Yerassyl Unerbek, Dana Shokobalinova
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
