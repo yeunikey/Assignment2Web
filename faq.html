@@ -14,9 +14,7 @@
     <link rel="stylesheet" href="./styles/component/footer.css" />
     <link rel="stylesheet" href="./styles/component/popup.css" />
 
-    <link rel="stylesheet" href="./styles/pages/home.css" />
-    <link rel="stylesheet" href="./styles/pages/profile.css" />
-    <link rel="stylesheet" href="./styles/pages/gallery.css" />
+    <link rel="stylesheet" href="./styles/pages/faq.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,6 +52,7 @@
             uni airways
         </a>
 
+        <!-- Бургер кнопка -->
         <button class="header__burger" aria-label="Menu">
             <span></span>
             <span></span>
@@ -97,20 +96,38 @@
 
     </header>
 
-    <section class="container content gallery">
-        <div class="gallery__grid">
-            <div class="gallery__item"><img
-                    src="https://www.jetphotos.com/api/json/heroimg.php?src=https://cdn.jetphotos.com/full/5/472726_1756814697.jpg&width=882"
-                    alt="Image 1"></div>
-            <div class="gallery__item"><img src="https://cdn.jetphotos.com/full/5/933188_1700831637.jpg" alt="Image 2">
+
+    <section class="container faq content">
+        <h2 class="faq__title">Часто задаваемые вопросы</h2>
+
+        <div class="accordion-item">
+            <button class="accordion-header">Как забронировать билет онлайн?</button>
+            <div class="accordion-content">
+                <p>Выберите маршрут и даты, заполните данные пассажиров и нажмите "Купить". Подтверждение придет на
+                    вашу почту.</p>
             </div>
-            <div class="gallery__item"><img src="https://cdn.jetphotos.com/full/5/976179_1736243796.jpg" alt="Image 3">
+        </div>
+
+        <div class="accordion-item">
+            <button class="accordion-header">Можно ли изменить дату рейса?</button>
+            <div class="accordion-content">
+                <p>Да, изменение возможно через личный кабинет или связавшись с нашей поддержкой. Возможны
+                    дополнительные сборы.</p>
             </div>
-            <div class="gallery__item"><img src="https://cdn.jetphotos.com/full/5/406523_1756838917.jpg" alt="Image 4">
+        </div>
+
+        <div class="accordion-item">
+            <button class="accordion-header">Какие способы оплаты принимаются?</button>
+            <div class="accordion-content">
+                <p>Мы принимаем карты Visa, Mastercard, электронные кошельки и онлайн-банкинг.</p>
             </div>
-            <div class="gallery__item"><img src="https://cdn.jetphotos.com/full/6/1107024_1756385320.jpg" alt="Image 5">
-            </div>
-            <div class="gallery__item"><img src="https://cdn.jetphotos.com/full/5/800073_1703953701.jpg" alt="Image 6">
+        </div>
+
+        <div class="accordion-item">
+            <button class="accordion-header">Как получить возврат билета?</button>
+            <div class="accordion-content">
+                <p>Подайте заявку на возврат через личный кабинет. Средства будут возвращены на карту или кошелек в
+                    течение 5–10 рабочих дней.</p>
             </div>
         </div>
     </section>
@@ -133,6 +150,7 @@
     </footer>
 
     <script src="./js/contact.js"></script>
+    <script src="./js/faq.js"></script>
     <script src="./js/burger.js"></script>
 
 </body>

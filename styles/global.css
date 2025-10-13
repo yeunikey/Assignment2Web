@@ -1,15 +1,27 @@
 :root {
+    /* Основные цвета (светлая тема по умолчанию) */
     --color-primary: #1768ff;
     --color-muted: #f7f7f7;
     --color-white: #ffffff;
     --color-dark: #242424;
     --color-secondary: #9caab5;
-    --color-background: #05203d;
+    --color-background: #ffffff;
+    /* светлый фон */
     --color-dark-light: #E2E2E2;
     --color-gray: #C3C3C3;
     --color-red: #D45353;
     --color-stroke: #CFCFCF;
     --color-green: #29b52b;
+
+    color: var(--color-dark);
+}
+
+/* Тёмная тема */
+body.dark-theme {
+    --color-background: #222;
+    --color-dark: #ffffff;
+    --color-muted: #1a1a1a;
+    color: white;
 }
 
 body {
@@ -22,6 +34,8 @@ body {
 
     display: flex;
     flex-direction: column;
+
+    background-color: var(--color-background);
 }
 
 .content {
@@ -34,4 +48,12 @@ body {
 
 a {
     text-decoration: none;
+}
+
+.contact-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
 }

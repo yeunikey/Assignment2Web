@@ -1,4 +1,10 @@
 .container {
     margin: 0 auto;
-    width: 75dvw;
+    width: 95dvw;
+}
+
+@media (min-width: 800px) {
+    .container {
+        width: 75dvw;
+    }
 }

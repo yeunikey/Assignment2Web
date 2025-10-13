@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="./styles/pages/home.css" />
     <link rel="stylesheet" href="./styles/pages/profile.css" />
     <link rel="stylesheet" href="./styles/pages/billing.css" />
+    <link rel="stylesheet" href="./styles/component/popup.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,17 +27,51 @@
 
 <body>
 
+    <div id="contactPopup" class="popup">
+        <div class="popup-content">
+            <span id="closePopup" class="close">&times;</span>
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="emailPopup">Email</label>
+                    <input type="email" id="emailPopup" name="email" placeholder="example@mail.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send</button>
+            </form>
+        </div>
+    </div>
+
     <header class="container header__top">
         <a href="./index.html" class="header__company">
             uni airways
         </a>
 
+        <button class="header__burger" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
         <div class="header__info">
             <div class="header__items">
+
                 <a href="./gallery.html" class="header__item">
                     Галерея
                 </a>
+                <a href="./faq.html" class="header__item">FAQ</a>
+                <button id="contactBtn" class="contact-btn header__item">
+                    Контакты
+                </button>
             </div>
+
 
             <a href="./profile.html" class="header__user">
                 <img class="header__user__img"
@@ -46,11 +81,23 @@
                     Ерасыл У.
                 </div>
             </a>
+
+        </div>
+
+        <div class="fullscreen-menu" id="fullscreenMenu">
+            <button class="fullscreen-menu__close" id="closeFullscreen">&times;</button>
+            <nav class="fullscreen-menu__links">
+                <a href="./index.html">Главная</a>
+                <a href="./gallery.html">Галерея</a>
+                <a href="./faq.html">FAQ</a>
+                <a href="./profile.html">Профиль</a>
+                <button id="contactBtn2" class="contact-btn">Контакты</button>
+            </nav>
         </div>
 
     </header>
 
-    <section class="container content billing">
+    <form class="container content billing">
 
         <div class="billing__content">
             <div class="ticket">
@@ -124,17 +171,17 @@
                 Итого: 88 200 ₸
             </div>
 
-            <a class="billing__info__kaspi" href="./success.html">
+            <button class="billing__info__kaspi" type="submit">
                 <img height="24px" width="24px" src="https://companieslogo.com/img/orig/KKS.F-9d710a31.png?t=1720244492"
                     alt="kaspi">
 
                 <span>
                     Оплатить
                 </span>
-            </a>
+            </button>
         </div>
 
-    </section>
+    </form>
 
     <footer class="footer">
         <div class="container footer__content">
@@ -153,6 +200,9 @@
         </div>
     </footer>
 
+    <script src="./js/billing.js"></script>
+    <script src="./js/contact.js"></script>
+    <script src="./js/burger.js"></script>
 
 </body>
 

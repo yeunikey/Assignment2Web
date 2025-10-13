@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./styles/component/header.css" />
     <link rel="stylesheet" href="./styles/component/footer.css" />
     <link rel="stylesheet" href="./styles/component/search.css" />
+    <link rel="stylesheet" href="./styles/component/popup.css" />
 
     <link rel="stylesheet" href="./styles/pages/home.css" />
 
@@ -24,6 +25,28 @@
 </head>
 
 <body>
+
+    <div id="contactPopup" class="popup">
+        <div class="popup-content">
+            <span id="closePopup" class="close">&times;</span>
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="emailPopup">Email</label>
+                    <input type="email" id="emailPopup" name="email" placeholder="example@mail.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send</button>
+            </form>
+        </div>
+    </div>
 
     <section class="search">
 
@@ -38,24 +61,38 @@
                     uni airways
                 </a>
 
+                <!-- Бургер кнопка -->
+                <button class="header__burger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
                 <div class="header__info">
                     <div class="header__items">
-                      
-                        <a href="./gallery.html" class="header__item">
-                            Галерея
-                        </a>
+                        <a href="./gallery.html" class="header__item">Галерея</a>
+                        <a href="./faq.html" class="header__item">FAQ</a>
+                        <button id="contactBtn" class="contact-btn header__item">Контакты</button>
                     </div>
 
                     <a href="./profile.html" class="header__user">
                         <img class="header__user__img"
                             src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Pavel_Durov_sitting_portrait.jpg/250px-Pavel_Durov_sitting_portrait.jpg"
                             alt="User logo">
-                        <div class="header__user__name">
-                            Ерасыл У.
-                        </div>
+                        <div class="header__user__name">Ерасыл У.</div>
                     </a>
                 </div>
 
+                <div class="fullscreen-menu" id="fullscreenMenu">
+                    <button class="fullscreen-menu__close" id="closeFullscreen">&times;</button>
+                    <nav class="fullscreen-menu__links">
+                        <a href="./index.html">Главная</a>
+                        <a href="./gallery.html">Галерея</a>
+                        <a href="./faq.html">FAQ</a>
+                        <a href="./profile.html">Профиль</a>
+                        <button id="contactBtn2" class="contact-btn">Контакты</button>
+                    </nav>
+                </div>
             </header>
 
             <form class="search__form">
@@ -112,6 +149,9 @@
                             Туда и обратно
                         </div>
                     </div>
+
+                    <div id="currentDateTime" class="current-datetime"></div>
+
                 </div>
             </form>
 
@@ -150,160 +190,105 @@
         <div class="results__list">
             <div class="ticket">
                 <div class="ticket__content">
-                    <div class="ticket__route">
-                        <div class="ticket__city">Алматы (ALA)</div>
-                        <div class="ticket__time">08:30</div>
+                    <div class="ticket__top">
+                        <div class="ticket__route">
+                            <div class="ticket__city">Алматы (ALA)</div>
+                            <div class="ticket__time">08:30</div>
+                        </div>
+                        <div class="ticket__middle">✈</div>
+                        <div class="ticket__route">
+                            <div class="ticket__city">Стамбул (IST)</div>
+                            <div class="ticket__time">12:45</div>
+                        </div>
                     </div>
-                    <div class="ticket__middle">✈</div>
-                    <div class="ticket__route">
-                        <div class="ticket__city">Стамбул (IST)</div>
-                        <div class="ticket__time">12:45</div>
+                    <div class="ticket__bottom">
+                        <div class="ticket__price">75 000 ₸</div>
+                        <div class="ticket__remaining-time"></div>
                     </div>
-                    <div class="ticket__price">75 000 ₸</div>
                 </div>
                 <a class="ticket__button" href="./billing.html">КУПИТЬ</a>
             </div>
 
             <div class="ticket">
                 <div class="ticket__content">
-                    <div class="ticket__route">
-                        <div class="ticket__city">Нур-Султан (NQZ)</div>
-                        <div class="ticket__time">10:15</div>
+                    <div class="ticket__top">
+                        <div class="ticket__route">
+                            <div class="ticket__city">Нур-Султан (NQZ)</div>
+                            <div class="ticket__time">08:30</div>
+                        </div>
+                        <div class="ticket__middle">✈</div>
+                        <div class="ticket__route">
+                            <div class="ticket__city">Алматы (ALA)</div>
+                            <div class="ticket__time">12:45</div>
+                        </div>
                     </div>
-                    <div class="ticket__middle">✈</div>
-                    <div class="ticket__route">
-                        <div class="ticket__city">Москва (SVO)</div>
-                        <div class="ticket__time">11:50</div>
+                    <div class="ticket__bottom">
+                        <div class="ticket__price">25 000 ₸</div>
+                        <div class="ticket__remaining-time"></div>
                     </div>
-                    <div class="ticket__price">55 000 ₸</div>
                 </div>
                 <a class="ticket__button" href="./billing.html">КУПИТЬ</a>
             </div>
 
             <div class="ticket">
                 <div class="ticket__content">
-                    <div class="ticket__route">
-                        <div class="ticket__city">Нур-Султан (NQZ)</div>
-                        <div class="ticket__time">09:15</div>
+                    <div class="ticket__top">
+                        <div class="ticket__route">
+                            <div class="ticket__city">Алматы (ALA)</div>
+                            <div class="ticket__time">08:30</div>
+                        </div>
+                        <div class="ticket__middle">✈</div>
+                        <div class="ticket__route">
+                            <div class="ticket__city">Нью-Йорк (NYC)</div>
+                            <div class="ticket__time">12:45</div>
+                        </div>
                     </div>
-                    <div class="ticket__middle">✈</div>
-                    <div class="ticket__route">
-                        <div class="ticket__city">Доха (DOH)</div>
-                        <div class="ticket__time">12:50</div>
+                    <div class="ticket__bottom">
+                        <div class="ticket__price">500 000 ₸</div>
+                        <div class="ticket__remaining-time"></div>
                     </div>
-                    <div class="ticket__price">79 000 ₸</div>
                 </div>
                 <a class="ticket__button" href="./billing.html">КУПИТЬ</a>
             </div>
 
             <div class="ticket">
                 <div class="ticket__content">
-                    <div class="ticket__route">
-                        <div class="ticket__city">Доха (DOH)</div>
-                        <div class="ticket__time">08:30</div>
+                    <div class="ticket__top">
+                        <div class="ticket__route">
+                            <div class="ticket__city">Астана (NQZ)</div>
+                            <div class="ticket__time">08:30</div>
+                        </div>
+                        <div class="ticket__middle">✈</div>
+                        <div class="ticket__route">
+                            <div class="ticket__city">Стамбул (IST)</div>
+                            <div class="ticket__time">12:45</div>
+                        </div>
                     </div>
-                    <div class="ticket__middle">✈</div>
-                    <div class="ticket__route">
-                        <div class="ticket__city">Нью-Йорк (JFK)</div>
-                        <div class="ticket__time">12:45</div>
+                    <div class="ticket__bottom">
+                        <div class="ticket__price">180 000 ₸</div>
+                        <div class="ticket__remaining-time"></div>
                     </div>
-                    <div class="ticket__price">575 000 ₸</div>
                 </div>
                 <a class="ticket__button" href="./billing.html">КУПИТЬ</a>
             </div>
 
             <div class="ticket">
                 <div class="ticket__content">
-                    <div class="ticket__route">
-                        <div class="ticket__city">Алматы (ALA)</div>
-                        <div class="ticket__time">07:00</div>
+                    <div class="ticket__top">
+                        <div class="ticket__route">
+                            <div class="ticket__city">Алматы (ALA)</div>
+                            <div class="ticket__time">08:30</div>
+                        </div>
+                        <div class="ticket__middle">✈</div>
+                        <div class="ticket__route">
+                            <div class="ticket__city">Берлин (BER)</div>
+                            <div class="ticket__time">12:45</div>
+                        </div>
                     </div>
-                    <div class="ticket__middle">✈</div>
-                    <div class="ticket__route">
-                        <div class="ticket__city">Бангкок (BKK)</div>
-                        <div class="ticket__time">14:30</div>
+                    <div class="ticket__bottom">
+                        <div class="ticket__price">115 000 ₸</div>
+                        <div class="ticket__remaining-time"></div>
                     </div>
-                    <div class="ticket__price">150 000 ₸</div>
-                </div>
-                <a class="ticket__button" href="./billing.html">КУПИТЬ</a>
-            </div>
-
-            <div class="ticket">
-                <div class="ticket__content">
-                    <div class="ticket__route">
-                        <div class="ticket__city">Нур-Султан (NQZ)</div>
-                        <div class="ticket__time">06:50</div>
-                    </div>
-                    <div class="ticket__middle">✈</div>
-                    <div class="ticket__route">
-                        <div class="ticket__city">Берлин (TXL)</div>
-                        <div class="ticket__time">12:20</div>
-                    </div>
-                    <div class="ticket__price">120 000 ₸</div>
-                </div>
-                <a class="ticket__button" href="./billing.html">КУПИТЬ</a>
-            </div>
-
-            <div class="ticket">
-                <div class="ticket__content">
-                    <div class="ticket__route">
-                        <div class="ticket__city">Алматы (ALA)</div>
-                        <div class="ticket__time">09:10</div>
-                    </div>
-                    <div class="ticket__middle">✈</div>
-                    <div class="ticket__route">
-                        <div class="ticket__city">Токио (HND)</div>
-                        <div class="ticket__time">23:45</div>
-                    </div>
-                    <div class="ticket__price">420 000 ₸</div>
-                </div>
-                <a class="ticket__button" href="./billing.html">КУПИТЬ</a>
-            </div>
-
-            <div class="ticket">
-                <div class="ticket__content">
-                    <div class="ticket__route">
-                        <div class="ticket__city">Нур-Султан (NQZ)</div>
-                        <div class="ticket__time">13:15</div>
-                    </div>
-                    <div class="ticket__middle">✈</div>
-                    <div class="ticket__route">
-                        <div class="ticket__city">Стамбул (IST)</div>
-                        <div class="ticket__time">17:40</div>
-                    </div>
-                    <div class="ticket__price">65 000 ₸</div>
-                </div>
-                <a class="ticket__button" href="./billing.html">КУПИТЬ</a>
-            </div>
-
-            <div class="ticket">
-                <div class="ticket__content">
-                    <div class="ticket__route">
-                        <div class="ticket__city">Алматы (ALA)</div>
-                        <div class="ticket__time">12:00</div>
-                    </div>
-                    <div class="ticket__middle">✈</div>
-                    <div class="ticket__route">
-                        <div class="ticket__city">Дубай (DXB)</div>
-                        <div class="ticket__time">16:30</div>
-                    </div>
-                    <div class="ticket__price">130 000 ₸</div>
-                </div>
-                <a class="ticket__button" href="./billing.html">КУПИТЬ</a>
-            </div>
-
-            <div class="ticket">
-                <div class="ticket__content">
-                    <div class="ticket__route">
-                        <div class="ticket__city">Нур-Султан (NQZ)</div>
-                        <div class="ticket__time">15:00</div>
-                    </div>
-                    <div class="ticket__middle">✈</div>
-                    <div class="ticket__route">
-                        <div class="ticket__city">Париж (CDG)</div>
-                        <div class="ticket__time">21:30</div>
-                    </div>
-                    <div class="ticket__price">210 000 ₸</div>
                 </div>
                 <a class="ticket__button" href="./billing.html">КУПИТЬ</a>
             </div>
@@ -348,6 +333,7 @@
             <a href="./index.html" class="footer__brand">
                 uni airways
             </a>
+            <button id="themeToggleBtn">Сменить тему</button>
 
             <div class="footer__links">
                 <a href="./index.html">Поиск рейсов</a>
@@ -360,6 +346,10 @@
         </div>
     </footer>
 
+    <script src="./js/contact.js"></script>
+    <script src="./js/displayTime.js"></script>
+    <script src="./js/burger.js"></script>
+    <script src="./js/theme.js"></script>
 
 </body>
 

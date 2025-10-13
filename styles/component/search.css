@@ -141,20 +141,30 @@ input[type="date"]:valid {
 }
 
 .search__direction__text {
-    background-color: var(--color-muted);
+    background-color: #fbfbfb;
 
     padding: 8px 24px;
     border-radius: 14px;
 
     cursor: pointer;
+    color: #111;
+
 }
 
 .search__direction__text:first-child {
-    background-color: var(--color-background);
-    color: white;
+    background-color: var(--color-gray);
+    color: #111;
 }
 
 .search__direction__text:last-child:hover {
-    background-color: var(--color-gray);
-    color: black;
+    background-color: #999;
+    color: #111;
+}
+
+.current-datetime {
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 15px;
+    text-align: center;
 }

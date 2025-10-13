@@ -1,16 +1,20 @@
 /* Results */
 
 .results {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 32px;
     margin: 48px auto;
     padding-bottom: 32px;
 }
 
+@media (min-width: 800px) {
+    .results {
+        grid-template-columns: 256px 1fr;
+    }
+}
+
 .results__filter {
-    flex: 0 0 196px;
-    width: 196px;
     background-color: var(--color-muted);
     border-radius: 16px;
     padding: 24px;
@@ -30,7 +34,7 @@
 .filter__title {
     font-weight: 500;
     font-size: 14px;
-    color: var(--color-secondary);
+    color: var(--color-dark);
     margin-bottom: 8px;
 }
 
@@ -39,7 +43,7 @@
     align-items: center;
     gap: 8px;
     font-size: 14px;
-    color: var(--color-background);
+    color: var(--color-dark);
     cursor: pointer;
 }
 
@@ -57,12 +61,11 @@
     height: 6px;
     border-radius: 6px;
     background-color: var(--color-muted);
-    accent-color: var(--color-background);
+    accent-color: var(--color-dark);
 }
 
 .filter__price {
-    flex: 1 1 0;
-    min-width: 0;
+    width: 50px;
 }
 
 .filter__range-inputs {
@@ -81,7 +84,7 @@
 
     background-color: var(--color-white);
     font-size: 14px;
-    color: var(--color-background);
+    color: var(--color-dark);
     box-sizing: border-box;
 }
 
@@ -100,13 +103,29 @@
     border-radius: 16px;
 
     overflow: hidden;
-    height: 128px;
+    height: 156px;
 }
 
 .ticket__content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.ticket__top {
     display: grid;
     flex: 1;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+
+    padding: 16px 24px;
+}
+
+.ticket__bottom {
+    display: grid;
+    flex: 1;
+    grid-template-columns: 1fr 1fr;
     justify-content: center;
     align-items: center;
 
@@ -118,7 +137,7 @@
     background-color: var(--color-green);
     writing-mode: vertical-rl;
 
-    padding: 16px 24px;
+    padding: 16px 16px;
     padding-top: 32px;
 
     color: white;
@@ -158,10 +177,9 @@
 
 .ticket__price {
     display: flex;
-    justify-content: end;
     font-size: 18px;
     font-weight: 600;
-    color: var(--color-background);
+    color: var(--color-dark);
 }
 
 /* cards */
@@ -245,4 +263,19 @@
 
 .card button:hover {
     background: rgba(0, 0, 0, 0.8);
+}
+
+.ticket__remaining-time {
+    font-size: 14px;
+    color: var(--color-green);
+    font-weight: 500;
+    text-wrap: nowrap;
+}
+
+#themeToggleBtn {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    padding: 10px 20px;
+    z-index: 1000;
 }

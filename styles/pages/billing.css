@@ -113,3 +113,16 @@ ul {
 .billing__form__group select:focus {
     border-color: var(--color-dark);
 }
+
+input.error,
+select.error {
+    border: 1px solid #ff9595;
+    background-color: #fffafa;
+}
+
+input.error:focus,
+select.error:focus {
+    outline: none;
+    border-color: #ff0000;
+    background-color: #fff;
+}

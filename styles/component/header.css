@@ -24,6 +24,7 @@
     display: flex;
 
     gap: 32px;
+    align-items: center;
 }
 
 .header__item {
@@ -51,4 +52,123 @@
 .header__user__name {
     color: var(--color-white);
     font-weight: 500;
+}
+
+/* Скрываем бургер на больших экранах */
+.header__burger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 0;
+}
+
+.header__burger span {
+    display: block;
+    height: 3px;
+    background-color: var(--color-white);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Адаптивное меню */
+@media (max-width: 768px) {
+    .header__burger {
+        display: flex;
+    }
+
+    .header__info {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: var(--color-background);
+        flex-direction: column;
+        width: 200px;
+        gap: 16px;
+        padding: 16px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        display: none;
+        /* по умолчанию скрыто */
+    }
+
+    .header__info.active {
+        display: flex;
+    }
+
+    .header__items {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+/* Анимация бургер */
+.header__burger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.header__burger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.header__burger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Полноэкранное меню */
+.fullscreen-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    z-index: 1000;
+}
+
+.fullscreen-menu.active {
+    display: flex;
+}
+
+.fullscreen-menu__close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    font-size: 48px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.fullscreen-menu__links {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+}
+
+.fullscreen-menu__links a,
+.fullscreen-menu__links button {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.fullscreen-menu__links a:hover,
+.fullscreen-menu__links button:hover {
+    color: #ffd700;
 }
