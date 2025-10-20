@@ -24,7 +24,7 @@
 .profile__name {
     font-size: 28px;
     font-weight: 600;
-    color: var(--color-background);
+    color: var(--color-dark);
     margin: 0;
 }
 

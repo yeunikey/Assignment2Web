@@ -32,4 +32,20 @@ document.addEventListener('DOMContentLoaded', () => {
         menu.classList.toggle('active');
     });
 
+    const greetingElement = document.querySelector('.search__title');
+
+    if (greetingElement) {
+        const currentHour = new Date().getHours();
+        let greeting;
+
+        if (currentHour >= 5 && currentHour < 12) {
+            greeting = 'Доброе утро';
+        } else if (currentHour >= 12 && currentHour < 18) {
+            greeting = 'Добрый день';
+        } else {
+            greeting = 'Добрый вечер';
+        }
+
+        greetingElement.textContent = `${greeting}, куда летим сегодня?`;
+    }
 });

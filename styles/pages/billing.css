@@ -126,3 +126,23 @@ select.error:focus {
     border-color: #ff0000;
     background-color: #fff;
 }
+
+.clear-button {
+    background-color: transparent;
+    border: 1px solid var(--color-secondary);
+    color: var(--color-secondary);
+    padding: 10px 16px;
+    border-radius: 16px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.clear-button:hover {
+    background-color: var(--color-dark-light);
+    color: var(--color-dark);
+    border-color: var(--color-dark-light);
+}

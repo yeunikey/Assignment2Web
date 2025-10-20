@@ -279,3 +279,49 @@
     padding: 10px 20px;
     z-index: 1000;
 }
+
+.rate {
+    padding-bottom: 96px;
+    text-align: center;
+    /* Центрируем содержимое рейтинга */
+}
+
+/* Rating component styles */
+.rate__title {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.rating-container {
+    display: inline-block;
+    font-size: 40px;
+    cursor: pointer;
+    letter-spacing: 5px;
+}
+
+.star {
+    color: var(--color-gray);
+    transition: color 0.2s ease, transform 0.1s ease;
+    user-select: none;
+}
+
+.star:hover {
+    transform: scale(1.1);
+}
+
+.star.selected {
+    color: gold;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+}
+
+body.dark-theme .star {
+    color: var(--color-secondary);
+}
+
+#rating-value {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--color-dark);
+}
