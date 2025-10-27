@@ -12,6 +12,7 @@
     --color-red: #D45353;
     --color-stroke: #CFCFCF;
     --color-green: #29b52b;
+    --color-brand: white;
 
     color: var(--color-dark);
 }
@@ -21,6 +22,7 @@ body.dark-theme {
     --color-background: #222;
     --color-dark: #ffffff;
     --color-muted: #1a1a1a;
+    --color-brand: black;
     color: white;
 }
 
@@ -56,4 +58,94 @@ a {
     cursor: pointer;
     font: inherit;
     color: inherit;
+}
+
+.copy-btn {
+    padding: 6px 12px;
+    font-size: 14px;
+    border: none;
+    background-color: var(--color-muted);
+    color: var(--color-primary);
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.copy-btn:hover {
+    opacity: 0.8;
+}
+
+body.dark-theme .copy-btn {
+    background-color: #444;
+    color: var(--color-white);
+}
+
+.lazy-load {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.lazy-loaded {
+    opacity: 1;
+}
+
+#notification-toast {
+    position: fixed;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    padding: 16px 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 10000;
+    transition: top 0.5s ease-in-out;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+body.dark-theme #notification-toast {
+    background-color: var(--color-white);
+    color: var(--color-dark);
+}
+
+#notification-toast.show {
+    top: 30px;
+}
+
+.spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    -webkit-animation: spin 1s ease-in-out infinite;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+#scrollProgressBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-green));
+    width: 0%;
+    z-index: 9999;
+    transition: width 0.1s ease-out;
 }

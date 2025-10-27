@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="./styles/global.css" />
     <link rel="stylesheet" href="./styles/container.css" />
+    <link rel="stylesheet" href="./styles/test.css" />
 
     <link rel="stylesheet" href="./styles/component/header_profile.css" />
     <link rel="stylesheet" href="./styles/component/footer.css" />
@@ -22,9 +23,15 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <body>
+
+    <div id="scrollProgressBar"></div>
+
+    <div id="notification-toast"></div>
 
     <div id="contactPopup" class="popup">
         <div class="popup-content">
@@ -104,9 +111,15 @@
             <div class="profile__info">
                 <div class="profile__up">
                     <h2 class="profile__name">Ерасыл Унербек</h2>
-                    <p class="profile__phone">+7 777 123 45 67</p>
+                    <div class="profile__info-item">
+                        <p class="profile__phone">+7 777 123 45 67</p>
+                        <button class="copy-btn" data-clipboard-text="+7 777 123 45 67">Копировать</button>
+                    </div>
                 </div>
-                <p class="profile__email">ye.unerbek@yeunikey.dev</p>
+                <div class="profile__info-item">
+                    <p class="profile__email">ye.unerbek@yeunikey.dev</p>
+                    <button class="copy-btn" data-clipboard-text="ye.unerbek@yeunikey.dev">Копировать</button>
+                </div>
             </div>
         </div>
 
@@ -199,6 +212,11 @@
 
     <script src="./js/contact.js"></script>
     <script src="./js/burger.js"></script>
+
+    <script src="./js/jquery/lazyload.js"></script>
+    <script src="./js/jquery/scroll.js"></script>
+    <script src="./js/jquery/copy.js"></script>
+    <script src="./js/jquery/notification.js"></script>
 
 </body>
 

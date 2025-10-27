@@ -276,8 +276,32 @@
     position: fixed;
     bottom: 16px;
     right: 16px;
-    padding: 10px 20px;
+    padding: 4px 4px;
     z-index: 1000;
+
+    background-color: var(--color-brand);
+    border-radius: 100%;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+.search__button svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--color-dark) !important;
+}
+
+#themeToggleBtn svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--color-dark) !important;
 }
 
 .rate {
@@ -324,4 +348,91 @@ body.dark-theme .star {
     font-size: 18px;
     font-weight: 500;
     color: var(--color-dark);
+}
+
+/* stats */
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 48px 0;
+    background-color: var(--color-muted);
+    border-radius: 16px;
+    margin-bottom: 48px;
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.stats__item {
+    flex-basis: 200px;
+}
+
+.stats__number {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--color-text);
+}
+
+.stats__label {
+    font-size: 18px;
+    color: var(--color-secondary);
+}
+
+/* autocomplete */
+
+.filter__price {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-stroke);
+    color: var(--color-dark);
+}
+
+body.dark-theme .filter__price {
+    background-color: var(--color-dark-light);
+    border-color: var(--color-secondary);
+    color: var(--color-dark);
+}
+
+.autocomplete-wrapper {
+    position: relative;
+    flex: 1;
+}
+
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid var(--color-stroke);
+    border-top: none;
+    z-index: 99;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--color-white);
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+    border-radius: 0 0 16px 16px;
+}
+
+body.dark-theme .autocomplete-items {
+    background-color: #333;
+    border-color: var(--color-secondary);
+}
+
+.autocomplete-items div {
+    padding: 10px 16px;
+    cursor: pointer;
+    color: var(--color-dark);
+}
+
+.autocomplete-items div:hover {
+    background-color: var(--color-muted);
+}
+
+body.dark-theme .autocomplete-items div {
+    color: var(--color-white);
+}
+
+body.dark-theme .autocomplete-items div:hover {
+    background-color: #444;
 }

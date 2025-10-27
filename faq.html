@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="./styles/global.css" />
     <link rel="stylesheet" href="./styles/container.css" />
+    <link rel="stylesheet" href="./styles/test.css" />
 
     <link rel="stylesheet" href="./styles/component/header_profile.css" />
     <link rel="stylesheet" href="./styles/component/footer.css" />
@@ -16,14 +17,22 @@
 
     <link rel="stylesheet" href="./styles/pages/faq.css" />
 
+    <link rel="stylesheet" href="assignment7.css" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <body>
+
+    <div id="scrollProgressBar"></div>
+
+    <div id="notification-toast"></div>
 
     <div id="contactPopup" class="popup">
         <div class="popup-content">
@@ -52,7 +61,6 @@
             uni airways
         </a>
 
-        <!-- Бургер кнопка -->
         <button class="header__burger" aria-label="Menu">
             <span></span>
             <span></span>
@@ -99,6 +107,12 @@
 
     <section class="container faq content">
         <h2 class="faq__title">Часто задаваемые вопросы</h2>
+
+        <div class="faq__search">
+            <input type="text" id="faqSearchInput" placeholder="Поиск по вопросам...">
+            <button id="faqSearchBtn">Найти</button>
+            <button id="faqClearBtn">Очистить</button>
+        </div>
 
         <div class="accordion-item">
             <button class="accordion-header">Как забронировать билет онлайн?</button>
@@ -152,6 +166,11 @@
     <script src="./js/contact.js"></script>
     <script src="./js/faq.js"></script>
     <script src="./js/burger.js"></script>
+
+    <script src="./js/jquery.js"></script>
+    <script src="./js/jquery/scroll.js"></script>
+    <script src="./js/jquery/contact.js"></script>
+    <script src="./js/jquery/notification.js"></script>
 
 </body>
 

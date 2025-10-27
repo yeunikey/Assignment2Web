@@ -7,11 +7,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const SELECTED_COLOR = 'gold';
     const UNSELECTED_COLOR = 'var(--color-gray)';
 
+    const savedRating = localStorage.getItem('userRating');
+    if (savedRating) {
+        currentRating = parseInt(savedRating);
+    }
+
     function updateStars(rating) {
         stars.forEach((star, index) => {
             if (index < rating) {
                 star.style.color = SELECTED_COLOR;
-                star.classList.remove('selected');
+                star.classList.add('selected');
             } else {
                 star.style.color = UNSELECTED_COLOR;
                 star.classList.remove('selected');
@@ -32,6 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const rating = parseInt(this.getAttribute('data-rating'));
             currentRating = rating;
 
+            localStorage.setItem('userRating', currentRating);
+
             updateStars(currentRating);
             updateRatingText(currentRating);
         });
@@ -48,5 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    updateRatingText(0);
+    updateStars(currentRating);
+    updateRatingText(currentRating);
 });

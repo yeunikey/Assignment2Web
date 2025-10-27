@@ -1,49 +1,62 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const payButton = document.querySelector('.billing__info__kaspi');
-    const clearButton = document.querySelector('.clear-button');
-    const inputs = document.querySelectorAll('.billing__form input, .billing__form select');
+$(document).ready(function () {
 
-    payButton.addEventListener('click', (event) => {
-        event.preventDefault();
+    $(window).on('scroll', function () {
+        const scrollTop = $(window).scrollTop();
+        const docHeight = $(document).height();
+        const winHeight = $(window).height();
+        const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
+        $('#scrollProgressBar').css('width', scrollPercent + '%');
+    });
+
+    $('form.billing').on('submit', function (e) {
+        e.preventDefault();
 
         let isValid = true;
+        const $inputs = $('.billing__form input, .billing__form select');
 
-        inputs.forEach(input => {
-            input.classList.remove('error');
+        $inputs.each(function () {
+            const $input = $(this);
+            $input.removeClass('error');
+            const value = $input.val() ? $input.val().trim() : '';
 
-            if (!input.value.trim() && input.tagName !== 'SELECT' && input.type !== 'number') {
-                input.classList.add('error');
+            // Check required fields (all except baggage)
+            if ($input.is('#iin, #fio, #email, #phone, #age') && !value) {
+                $input.addClass('error');
                 isValid = false;
             }
 
-            if (input.type === 'email' && input.value.trim()) {
+            // Email validation
+            if ($input.is('#email') && value) {
                 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailPattern.test(input.value.trim())) {
-                    input.classList.add('error');
+                if (!emailPattern.test(value)) {
+                    $input.addClass('error');
                     isValid = false;
                 }
             }
 
-            if (input.type === 'tel' && input.value.trim()) {
-                const phonePattern = /^\+?\d[\d\s\-\(\)]{8,}$/;
-                if (!phonePattern.test(input.value.trim())) {
-                    input.classList.add('error');
+            // Phone validation
+            if ($input.is('#phone') && value) {
+                const phonePattern = /^\+?\d[\d\s\-\(\)]{8,}$/; // Simple pattern
+                if (!phonePattern.test(value)) {
+                    $input.addClass('error');
                     isValid = false;
                 }
             }
 
-            if (input.id === 'age' && input.value) {
-                const age = parseInt(input.value, 10);
+            // Age validation
+            if ($input.is('#age') && value) {
+                const age = parseInt(value, 10);
                 if (isNaN(age) || age <= 0 || age > 120) {
-                    input.classList.add('error');
+                    $input.addClass('error');
                     isValid = false;
                 }
             }
 
-            if (input.id === 'iin' && input.value.trim()) {
+            // IIN validation
+            if ($input.is('#iin') && value) {
                 const iinPattern = /^\d{12}$/;
-                if (!iinPattern.test(input.value.trim())) {
-                    input.classList.add('error');
+                if (!iinPattern.test(value)) {
+                    $input.addClass('error');
                     isValid = false;
                 }
             }
@@ -51,22 +64,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!isValid) {
             console.error('Ошибка: Пожалуйста, заполните все поля корректно.');
+            showToast('Ошибка: Заполните все поля корректно');
             return;
         }
 
-        window.location.href = './success.html';
+        const $button = $('.billing__info__kaspi');
+        const originalHtml = $button.html();
+
+        $button.html('<span class="spinner"></span>');
+        $button.prop('disabled', true);
+
+        setTimeout(function () {
+            showToast('Оплата прошла успешно! Перенаправляем...');
+
+            $button.html(originalHtml);
+            $button.prop('disabled', false);
+
+            window.location.href = './success.html';
+        }, 3000);
+
     });
 
-    clearButton.addEventListener('click', (event) => {
-        event.preventDefault();
+    // --- NEW CLEAR FORM LOGIC ---
+    $('.clear-button').on('click', function (e) {
+        e.preventDefault();
+        const $inputs = $('.billing__form input, .billing__form select');
 
-        inputs.forEach(input => {
-            if (input.tagName === 'INPUT') {
-                input.value = '';
-            } else if (input.tagName === 'SELECT') {
-                input.value = 'none';
+        $inputs.each(function () {
+            if ($(this).is('input')) {
+                $(this).val('');
+            } else if ($(this).is('select')) {
+                $(this).val('none'); // Set dropdown to default
             }
-            input.classList.remove('error');
+            $(this).removeClass('error'); // Remove error class
         });
 
         console.log('Форма очищена.');

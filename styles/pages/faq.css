@@ -46,3 +46,60 @@
     font-size: 14px;
     color: var(--color-dark);
 }
+
+.highlight {
+    background-color: yellow;
+    color: #333;
+    font-weight: bold;
+    border-radius: 3px;
+    padding: 0 2px;
+}
+
+.faq__search {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+#faqSearchInput {
+    flex: 1;
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: 1px solid var(--color-stroke);
+    font-size: 16px;
+    background-color: var(--color-white);
+    color: var(--color-dark);
+}
+
+#faqSearchBtn,
+#faqClearBtn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#faqSearchBtn {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+#faqClearBtn {
+    background-color: var(--color-muted);
+    color: var(--color-dark);
+    border: 1px solid var(--color-stroke);
+}
+
+body.dark-theme #faqSearchInput {
+    background-color: #333;
+    border-color: var(--color-secondary);
+    color: var(--color-white);
+}
+
+body.dark-theme #faqClearBtn {
+    background-color: #444;
+    color: var(--color-white);
+    border-color: var(--color-secondary);
+}
