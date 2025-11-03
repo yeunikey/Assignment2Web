@@ -124,7 +124,7 @@ input[type="date"]:valid {
 
 .search__info {
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
 
     margin-top: 16px;
 }

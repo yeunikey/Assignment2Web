@@ -103,7 +103,7 @@
     border-radius: 16px;
 
     overflow: hidden;
-    height: 156px;
+    max-height: 156px;
 }
 
 .ticket__content {
@@ -130,6 +130,10 @@
     align-items: center;
 
     padding: 16px 24px;
+}
+
+.ticket__company {
+    display: none;
 }
 
 .ticket__button {
@@ -201,7 +205,7 @@
     gap: 24px;
 }
 
-.card {
+.cards__item {
     flex: 1;
     flex-basis: 200px;
 
@@ -223,7 +227,7 @@
     background-position: center;
 }
 
-.card::after {
+.cards__item::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -243,16 +247,16 @@
     z-index: 1;
 }
 
-.card:hover {
+.cards__item:hover {
     transform: scale(1.05);
 }
 
-.card h2 {
+.cards__item h2 {
     margin: 0 0 10px 0;
     font-size: 24px;
 }
 
-.card a {
+.cards__item a {
     padding: 10px 20px;
     border: none;
     border-radius: 8px;
@@ -261,7 +265,7 @@
     cursor: pointer;
 }
 
-.card button:hover {
+.cards__item button:hover {
     background: rgba(0, 0, 0, 0.8);
 }
 
@@ -270,38 +274,6 @@
     color: var(--color-green);
     font-weight: 500;
     text-wrap: nowrap;
-}
-
-#themeToggleBtn {
-    position: fixed;
-    bottom: 16px;
-    right: 16px;
-    padding: 4px 4px;
-    z-index: 1000;
-
-    background-color: var(--color-dark);
-    border-radius: 100%;
-
-    width: 48px;
-    height: 48px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    cursor: pointer;
-}
-
-.search__button svg {
-    width: 24px;
-    height: 24px;
-    fill: var(--color-dark) !important;
-}
-
-#themeToggleBtn svg {
-    width: 24px;
-    height: 24px;
-    fill: var(--color-brand) !important;
 }
 
 .rate {

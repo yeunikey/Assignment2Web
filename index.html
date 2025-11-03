@@ -27,6 +27,8 @@
         rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
 <body>
@@ -152,16 +154,6 @@
                 </div>
 
                 <div class="search__info">
-                    <div class="search__direction">
-                        <div class="search__direction__text">
-                            В одну сторону
-                        </div>
-
-                        <div class="search__direction__text">
-                            Туда и обратно
-                        </div>
-                    </div>
-
                     <div id="currentDateTime" class="current-datetime"></div>
 
                 </div>
@@ -183,13 +175,6 @@
                 <label><input type="checkbox"> Air Astana</label>
                 <label><input type="checkbox"> Lufthansa</label>
                 <label><input type="checkbox"> Turkish Airlines</label>
-            </div>
-
-            <div class="filter__block">
-                <div class="filter__title">Пересадки</div>
-                <label><input type="checkbox"> Без пересадок</label>
-                <label><input type="checkbox"> 1 пересадка</label>
-                <label><input type="checkbox"> 2+ пересадок</label>
             </div>
 
             <div class="filter__block">
@@ -221,6 +206,7 @@
                     </div>
                     <div class="ticket__bottom">
                         <div class="ticket__price">75 000 ₸</div>
+                        <div class="ticket__company">Air Astana</div>
                         <div class="ticket__remaining-time"></div>
                     </div>
                 </div>
@@ -242,6 +228,7 @@
                     </div>
                     <div class="ticket__bottom">
                         <div class="ticket__price">25 000 ₸</div>
+                        <div class="ticket__company">Air Astana</div>
                         <div class="ticket__remaining-time"></div>
                     </div>
                 </div>
@@ -263,6 +250,7 @@
                     </div>
                     <div class="ticket__bottom">
                         <div class="ticket__price">500 000 ₸</div>
+                        <div class="ticket__company">Turkish Airlines</div>
                         <div class="ticket__remaining-time"></div>
                     </div>
                 </div>
@@ -284,6 +272,7 @@
                     </div>
                     <div class="ticket__bottom">
                         <div class="ticket__price">180 000 ₸</div>
+                        <div class="ticket__company">Lufthansa</div>
                         <div class="ticket__remaining-time"></div>
                     </div>
                 </div>
@@ -305,6 +294,7 @@
                     </div>
                     <div class="ticket__bottom">
                         <div class="ticket__price">115 000 ₸</div>
+                        <div class="ticket__company">Lufthansa</div>
                         <div class="ticket__remaining-time"></div>
                     </div>
                 </div>
@@ -335,7 +325,7 @@
         </div>
 
         <div class="cards__content">
-            <div class="card"
+            <div class="cards__item"
                 style="background-image: url('https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcQ-r-j2R53vT_y37G8_u7kBfh5hdxsJVK5NfMBP2wicurkK4D9rkv5uyllCXdD1GbJszpt1koXoSFAUagbuc-GTx7_hrkOl-FjwX4DDcg');">
                 <div class="card__content">
                     <h2>Париж</h2>
@@ -343,7 +333,7 @@
                 </div>
             </div>
 
-            <div class="card"
+            <div class="cards__item"
                 style="background-image: url('https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcRaZy7wvais0QRF-WdDgC1iLykCfn4ihLvn7hwl_3GnNuBfkMeiV-5nqtfOA5GOVXzl4RscFX0TVSL1hvWYUzEPCT7qsVMjTw8wTKVxpA');">
                 <div class="card__content">
                     <h2>Токио</h2>
@@ -351,7 +341,7 @@
                 </div>
             </div>
 
-            <div class="card"
+            <div class="cards__item"
                 style="background-image: url('https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTadFL8cMcdYwU_xHc6f5fZ76tUKD8st1EaCfuVy-IqcV_AGzhNhg5lSHI8PfKE38cNXEkCNHjlv6jhwCp8xmbOHwZtwZvIUNl9pegFjw');">
                 <div class="card__content">
                     <h2>Нью-Йорк</h2>
@@ -389,6 +379,7 @@
             <div class="footer__links">
                 <a href="./index.html">Поиск рейсов</a>
                 <a href="./gallery.html">Галерея</a>
+                <a href="./faq.html">FAQ</a>
             </div>
 
             <div class="footer__author">
@@ -409,6 +400,10 @@
     <script src="./js/jquery/animation.js"></script>
     <script src="./js/jquery/contact.js"></script>
     <script src="./js/jquery/notification.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 
 </body>
 

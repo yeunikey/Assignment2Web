@@ -4,6 +4,8 @@
     display: flex;
     flex-wrap: wrap;
     gap: 32px;
+    padding-bottom: 96px;
+
 }
 
 .billing__content {
@@ -63,7 +65,7 @@ ul {
 .billing__info__kaspi span {
     font-size: 14px;
     font-weight: 500;
-    color: white;
+    color: var(--color-brand);
 }
 
 /* Content */

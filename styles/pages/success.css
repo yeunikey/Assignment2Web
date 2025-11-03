@@ -6,7 +6,6 @@
 }
 
 .success__card {
-    background: var(--color-white);
     padding: 32px;
     border-radius: 16px;
     text-align: center;
@@ -44,6 +43,8 @@
     text-decoration: none;
 
     margin-top: 48px;
+    color: var(--color-brand);
+
 }
 
 .success__button:hover {
