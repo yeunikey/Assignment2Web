@@ -107,6 +107,7 @@ ul {
     border: 1px solid var(--color-stroke);
     border-radius: 8px;
     outline: none;
+    color: var(--color-dark);
 
     background-color: var(--color-muted);
 }

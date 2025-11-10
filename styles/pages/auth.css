@@ -1,0 +1,93 @@
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth__content {
+    max-width: 512px;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.auth-tabs {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 48px;
+}
+
+.tab-link {
+    background: none;
+    border: none;
+    padding: 15px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -1px;
+    color: var(--primary-dark);
+}
+
+.tab-link.active {
+    border-bottom: 3px solid var(--primary-color, #007bff);
+    color: var(--primary-color, #007bff);
+    font-weight: 600;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    /* Важно для padding */
+}
+
+.auth-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color, #007bff);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.auth-btn:hover {
+    background-color: var(--primary-dark, #0056b3);
+}
+
+.error-message {
+    color: #d9534f;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.success-message {
+    color: #5cb85c;
+    text-align: center;
+    margin-top: 10px;
+}

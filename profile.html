@@ -83,13 +83,12 @@
             </div>
 
 
-            <a href="./profile.html" class="header__user">
+            <a href="./auth.html" class="header__item auth-btn" id="loginLinkDesktop">Войти</a>
+            <a href="./profile.html" class="header__user" id="profileLinkDesktop" style="display: none;">
                 <img class="header__user__img"
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Pavel_Durov_sitting_portrait.jpg/250px-Pavel_Durov_sitting_portrait.jpg"
                     alt="User logo">
-                <div class="header__user__name">
-                    Ерасыл У.
-                </div>
+                <div class="header__user__name" id="usernameDesktop"></div>
             </a>
 
         </div>
@@ -124,6 +123,9 @@
                     <p class="profile__email">ye.unerbek@yeunikey.dev</p>
                     <button class="copy-btn" data-clipboard-text="ye.unerbek@yeunikey.dev">Копировать</button>
                 </div>
+                <button id="logoutButton" class="auth-btn">
+                    Выйти
+                </button>
             </div>
         </div>
 
@@ -222,6 +224,7 @@
     <script src="./js/contact.js"></script>
     <script src="./js/burger.js"></script>
     <script src="./js/theme.js"></script>
+    <script src="./js/authHeader.js"></script>
 
     <script src="./js/jquery/lazyload.js"></script>
     <script src="./js/jquery/scroll.js"></script>

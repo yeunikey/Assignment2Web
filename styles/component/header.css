@@ -172,3 +172,10 @@
 .fullscreen-menu__links button:hover {
     color: #ffd700;
 }
+
+.auth-btn {
+    background-color: var(--color-primary);
+    padding: 8px 32px;
+    border-radius: 24px;
+    font-size: 16px;
+}

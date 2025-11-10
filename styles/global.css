@@ -4,12 +4,13 @@
     --color-muted: #f7f7f7;
     --color-white: #ffffff;
     --color-dark: #242424;
+    --color-footer: #242424;
     --color-secondary: #9caab5;
     --color-background: #ffffff;
     /* светлый фон */
     --color-dark-light: #E2E2E2;
     --color-gray: #C3C3C3;
-    --color-red: #D45353;
+    --color-red: #D45353; 
     --color-stroke: #CFCFCF;
     --color-green: #29b52b;
     --color-brand: white;
@@ -27,6 +28,8 @@ body.dark-theme {
     --color-dark: #ffffff;
     --color-muted: #1a1a1a;
     --color-brand: black;
+    --color-footer: #1a1a1a;
+
     color: white;
 }
 
